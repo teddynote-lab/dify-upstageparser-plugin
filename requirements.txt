@@ -1,0 +1,6 @@
+dify_plugin~=0.0.1b67
+requests>=2.31.0
+python-dotenv>=1.0.0
+tqdm>=4.66.1
+pydantic>=2.5.0
+typing-extensions>=4.8.0
