@@ -1,65 +1,148 @@
-# Upstage Document Parser
+# Upstage Document Parse Plugin for Dify
 
-Upstage Document Parser는 PDF 문서를 분석하고 구조화된 데이터로 변환하는 API 클라이언트입니다.
+[![Upstage Document Parse Tutorial](https://img.youtube.com/vi/xWG4nYBZTsE/0.jpg)](https://youtu.be/xWG4nYBZTsE)
 
-## 기능
+Check out our [video tutorial](https://youtu.be/xWG4nYBZTsE) to see the plugin in action!
 
-- PDF 문서 파싱
-- OCR 자동 처리
-- 테이블, 그림, 차트 등의 요소 추출
-- 비동기 문서 처리 지원
+**Ready to use?**
 
-## 사용법
+[Download the Dify plugin package](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0) and upload it directly to your Dify instance.
 
-```python
-import os
-from upstage_parser import DocumentParser
+A powerful document parsing plugin for the [Dify](https://dify.ai) platform that leverages the Upstage Document Parse API to convert various document formats into structured markdown, HTML, or text.
 
-# API 키 설정
-api_key = "your_api_key"
-# 또는 환경 변수로 설정
-# os.environ["UPSTAGE_API_KEY"] = "your_api_key"
+## Features
 
-# 파서 초기화
-parser = DocumentParser(api_key=api_key)
+- **Multi-format Support**: Process PDFs, DOCX files, and various image formats
+- **Intelligent Document Understanding**: Extract text, tables, charts, and figures with their original structure
+- **Multiple Output Formats**: Convert documents to markdown, HTML, or plain text
+- **Efficient Caching**: Avoid reprocessing identical files with content-based caching
+- **OCR Capabilities**: Extract text from scanned documents and images
+- **Chart Recognition**: Identify and extract charts from documents
+- **Batch Processing**: Process multi-page documents efficiently
+- **Coordinate Extraction**: Obtain bounding box coordinates for document elements
 
-# 문서 파싱 요청
-request_id = parser.parse_document(
-    filename="your_document.pdf", 
-    ocr="auto",
-    coordinates=False,
-    base64_encoding=["table", "figure", "chart"]
-)
+## Installation
 
-# 파싱 상태 확인
-status = parser.check_status(request_id)
-
-# 결과 다운로드
-if status["status"] == "completed":
-    results = parser.download_results(status)
-```
-
-## 설치
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 환경 설정
+Configure the plugin in your Dify platform.
 
-`.env` 파일을 생성하고 다음 내용을 추가하세요:
+## Configuration
 
+### Required Credentials
+
+The plugin requires the following credentials:
+
+- `upstage_api_key`: Your Upstage API key (obtain from [Upstage Console](https://console.upstage.ai))
+- `base_url`: Your Dify instance base URL (default: "https://cloud.dify.ai")
+
+### Parameter Options
+
+When using the tool, you can configure the following parameters:
+
+- `result_type`: Output format (options: "md", "html", "text")
+- `as_file`: Whether to return results as a file or text (options: "file", "text")
+
+## Usage
+
+### In Dify Application
+
+1. Add the Upstage Document Parse tool to your application.
+2. Configure the required credentials.
+3. Use the tool in your application flows to process documents.
+
+### Direct Python Usage
+
+You can also use the client directly in your Python code:
+
+```python
+from tools.upstage_client import UpstageDocumentParseClient
+
+# Initialize the client
+client = UpstageDocumentParseClient(
+    api_key="your_upstage_api_key",
+    output_dir="exported_documents"
+)
+
+# Convert a document to markdown
+markdown_content = client.convert_to_markdown("path/to/your/document.pdf")
+
+# Convert a document to HTML
+html_content = client.convert_to_html("path/to/your/document.docx")
+
+# Convert a document to plain text
+text_content = client.convert_to_text("path/to/your/image.jpg")
 ```
-UPSTAGE_API_KEY=your_api_key
+
+## API Parameters
+
+The plugin uses the following parameters when calling the Upstage Document Parse API:
+
+| Parameter | Type | Description | Default |
+|-----------|------|-------------|---------|
+| `document` | File | The document file to be processed | Required |
+| `ocr` | String | Controls OCR behavior: "auto" (apply to images only) or "force" (convert all to images first) | "auto" |
+| `coordinates` | Boolean | Whether to return bounding box coordinates | false |
+| `chart_recognition` | Boolean | Whether to use chart recognition | true |
+| `output_formats` | List[String] | Format for layout elements: "text", "html", "markdown" | ["html", "markdown", "text"] |
+| `model` | String | Model used for inference | "document-parse-250305" |
+| `base64_encoding` | List[String] | Layout categories to provide as base64 encoded strings | ["table", "figure", "chart"] |
+
+## Caching Mechanism
+
+The plugin implements an efficient caching system:
+
+1. File content hashing to identify duplicate documents
+2. Result caching based on content hash and output format
+3. TTL-based cache expiration (default: 1 hour)
+
+## Examples
+
+### Converting a PDF to Markdown
+
+```python
+client = UpstageDocumentParseClient(api_key="your_api_key")
+markdown = client.convert_to_markdown("sample.pdf")
+print(markdown)
 ```
 
-## upstage-documentparse
+### Processing a Large Document
 
-**Author:** teddynote
-**Version:** 0.0.1
-**Type:** tool
+```python
+client = UpstageDocumentParseClient(api_key="your_api_key")
+exported_files = client.process_document(
+    "large_document.pdf",
+    wait=True,
+    poll_interval=2,
+    max_wait=600
+)
+print(f"Files exported: {exported_files}")
+```
 
-### Description
+## Development
+
+### Project Structure
+
+- `upstage-documentparse.py`: Main Dify plugin integration
+- `upstage_client.py`: Core client for interacting with the Upstage API
+- `requirements.txt`: Python dependencies
+
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+[MIT License](LICENSE)
+
+## Acknowledgements
+
+- [Upstage AI](https://upstage.ai) for providing the Document Parse API
+- [Dify](https://dify.ai) for the plugin ecosystem
 
 
 

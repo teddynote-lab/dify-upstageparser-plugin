@@ -1,0 +1,30 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+    <linearGradient id="synapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E5CB3"/>
+      <stop offset="100%" stop-color="#0079C1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 배경 원 -->
+  <circle cx="50" cy="50" r="40" fill="url(#synapGradient)"/>
+  
+  <!-- 'U' 형태의 문서 아이콘 -->
+  <path d="M35 30 L35 60 C35 70, 45 75, 50 75 C55 75, 65 70, 65 60 L65 30" 
+        stroke="white" 
+        stroke-width="6" 
+        stroke-linecap="round"
+        fill="none"/>
+  
+  <!-- 숫자 표시 -->
+  <text x="50" y="55" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">U</text>
+  
+  <!-- 문서 분석 점 (DocuAnalyzer 상징) -->
+  <circle cx="68" cy="35" r="3" fill="white"/>
+  <circle cx="30" cy="68" r="3" fill="white"/>
+  
+  <!-- 광선 효과 (AI 처리 상징) -->
+  <path d="M60 22 L65 27" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M75 40 L80 45" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 60 L27 65" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg>

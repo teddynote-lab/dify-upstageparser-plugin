@@ -1,0 +1,76 @@
+identity:
+  name: upstage-documentparse
+  author: teddynote
+  label:
+    en_US: Upstage Document Parse
+    zh_Hans: Upstage Document Parse
+    pt_BR: Upstage Document Parse
+    ko_KR: Upstage Document Parse
+description:
+  human:
+    en_US: Advanced Document Parsing API Tool. Use this tool to parse JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, XLSX, PPTX, etc
+    zh_Hans: Advanced Document Parsing API Tool. Use this tool to parse JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, XLSX, PPTX, etc
+    pt_BR: Advanced Document Parsing API Tool. Use this tool to parse JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, XLSX, PPTX, etc
+    ko_KR: 고급 문서 파싱 API 도구. JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, XLSX, PPTX, etc 파일을 파싱하는 데 사용
+  llm: Advanced Document Parsing API Tool. Use this tool to parse JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, XLSX, PPTX, etc
+parameters:
+  - name: files
+    type: files
+    required: true
+    label:
+      en_US: upload file
+      ko_KR: 파일 업로드
+    human_description:
+      en_US: upload the file to be parsed
+      ko_KR: 파싱할 파일 업로드
+    llm_description: upload the file to be parsed
+    form: llm
+  - name: result_type
+    type: select
+    required: false
+    default: md
+    label:
+      en_US: result form type
+      ko_KR: 결과 형식 유형
+    human_description:
+      en_US: the type of the result
+      ko_KR: 결과의 형식 유형
+    options:
+      - label:
+          en_US: md
+          ko_KR: md
+        value: md
+      - label:
+          en_US: html
+          ko_KR: html
+        value: html
+      - label:
+          en_US: text
+          ko_KR: 텍스트
+        value: text
+    llm_description: the type of the result. Either `md`, `html`, or `text`.
+    form: form
+  - name: as_file
+    type: select
+    required: false
+    default: text
+    label:
+      en_US: output as file
+      ko_KR: 파일로 반환
+    human_description:
+      en_US: the type of the output
+      ko_KR: 출력의 형식 유형
+    options:
+      - label:
+          en_US: text
+          ko_KR: 텍스트로 반환
+        value: text
+      - label:
+          en_US: file
+          ko_KR: 파일로 반환
+        value: file
+    llm_description: the type of the output. Either `text`, or `file`.
+    form: form
+extra:
+  python:
+    source: tools/upstage-documentparse.py

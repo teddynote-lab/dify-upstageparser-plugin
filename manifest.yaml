@@ -1,0 +1,39 @@
+version: 0.0.2
+type: plugin
+author: teddynote
+name: upstage-documentparse
+label:
+  en_US: Upstage Document Parse
+  ja_JP: Upstage Document Parse
+  zh_Hans: Upstage Document Parse
+  pt_BR: Upstage Document Parse
+description:
+  en_US: Advanced Document parsing tool
+  ja_JP: Advanced Document parsing tool
+  zh_Hans: Advanced Document parsing tool
+  pt_BR: Advanced Document parsing tool
+icon: upstage-color.png
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+plugins:
+  tools:
+    - provider/upstage-documentparse.yaml
+meta:
+  version: 0.0.2
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-13T15:48:23.694819+09:00
+privacy: PRIVACY.md
+verified: false
