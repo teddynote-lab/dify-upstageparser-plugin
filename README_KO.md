@@ -138,7 +138,7 @@ print(f"내보낸 파일: {exported_files}")
 
 ## 라이선스
 
-[MIT 라이선스](LICENSE)
+[MIT 라이선스](LICENSE.md)
 
 ## 문의
 

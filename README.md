@@ -137,7 +137,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](LICENSE.md)
 
 ## Contact
 
