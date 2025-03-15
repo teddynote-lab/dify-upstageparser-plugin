@@ -10,6 +10,7 @@
 
 [Dify](https://dify.ai) 플랫폼을 위한 강력한 문서 파싱 플러그인으로, Upstage Document Parse API를 활용하여 다양한 문서 형식을 구조화된 마크다운, HTML 또는 텍스트로 변환합니다.
 
+
 ## 기능
 
 - **다양한 형식 지원**: PDF, DOCX 파일 및 다양한 이미지 형식 처리
