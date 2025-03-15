@@ -1,9 +1,5 @@
 # Upstage Document Parse Plugin for Dify
 
-[![Upstage Document Parse Tutorial](https://img.youtube.com/vi/xWG4nYBZTsE/0.jpg)](https://youtu.be/xWG4nYBZTsE)
-
-Check out our [video tutorial](https://youtu.be/xWG4nYBZTsE) to see the plugin in action!
-
 **Ready to use?**
 
 [Download the Dify plugin package](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0) and upload it directly to your Dify instance.
