@@ -139,10 +139,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 [MIT License](LICENSE)
 
-## Acknowledgements
+## Contact
 
-- [Upstage AI](https://upstage.ai) for providing the Document Parse API
-- [Dify](https://dify.ai) for the plugin ecosystem
+**For any inquiries, please contact:**  
+dev@brain-crew.com
+
 
 
 

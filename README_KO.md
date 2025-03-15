@@ -140,7 +140,7 @@ print(f"내보낸 파일: {exported_files}")
 
 [MIT 라이선스](LICENSE)
 
-## 감사의 글
+## 문의
 
-- 문서 파싱 API를 제공해 주신 [Upstage AI](https://upstage.ai)
-- 플러그인 생태계를 위한 [Dify](https://dify.ai) 
+**문의사항이 있으시다면 다음 이메일로 문의해 주세요:**  
+dev@brain-crew.com
