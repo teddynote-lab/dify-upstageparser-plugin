@@ -7,6 +7,17 @@
 
 [Download the Dify plugin package](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=1) and upload it directly to your Dify instance.
 
+## Repository
+
+**GitHub:** [teddynote-lab/dify-upstageparser-plugin](https://github.com/teddynote-lab/dify-upstageparser-plugin)
+
+You can clone this repository using:
+
+```bash
+git clone https://github.com/teddynote-lab/dify-upstageparser-plugin.git
+cd dify-upstageparser-plugin
+```
+
 A powerful document parsing plugin for the [Dify](https://dify.ai) platform that leverages the Upstage Document Parse API to convert various document formats into structured markdown, HTML, or text.
 
 ## Features

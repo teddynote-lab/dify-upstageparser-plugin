@@ -11,6 +11,17 @@
 
 [Dify 플러그인 패키지 다운로드](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0)를 받아 Dify 인스턴스에 직접 업로드하세요.
 
+## 저장소
+
+**GitHub:** [teddynote-lab/dify-upstageparser-plugin](https://github.com/teddynote-lab/dify-upstageparser-plugin)
+
+다음 명령어로 이 저장소를 복제할 수 있습니다:
+
+```bash
+git clone https://github.com/teddynote-lab/dify-upstageparser-plugin.git
+cd dify-upstageparser-plugin
+```
+
 [Dify](https://dify.ai) 플랫폼을 위한 강력한 문서 파싱 플러그인으로, Upstage Document Parse API를 활용하여 다양한 문서 형식을 구조화된 마크다운, HTML 또는 텍스트로 변환합니다.
 
 
