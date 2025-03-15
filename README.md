@@ -1,5 +1,8 @@
 # Upstage Document Parse Plugin for Dify
 
+[![en](https://img.shields.io/badge/lang-English-blue.svg)](README.md)
+[![ko](https://img.shields.io/badge/lang-한국어-red.svg)](README_KO.md)
+
 **Ready to use?**
 
 [Download the Dify plugin package](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0) and upload it directly to your Dify instance.
@@ -19,7 +22,9 @@ A powerful document parsing plugin for the [Dify](https://dify.ai) platform that
 
 ## Installation
 
-Install the required dependencies:
+The installation steps below are only needed for developers who want to manually develop or modify the plugin. If you're an end user, simply [download the Dify plugin package](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0) and upload it to your Dify instance.
+
+For development:
 
 ```bash
 pip install -r requirements.txt

@@ -1,5 +1,8 @@
 # Dify를 위한 Upstage 문서 파싱 플러그인
 
+[![en](https://img.shields.io/badge/lang-English-blue.svg)](README.md)
+[![ko](https://img.shields.io/badge/lang-한국어-red.svg)](README_KO.md)
+
 [![dify 커스텀 도구 제작하기 (upstage 파서) 튜토리얼](https://img.youtube.com/vi/xWG4nYBZTsE/0.jpg)](https://youtu.be/xWG4nYBZTsE)
 
 [dify 커스텀 도구 제작하기 (upstage 파서) 튜토리얼](https://youtu.be/xWG4nYBZTsE)을 확인하여 플러그인 사용법을 확인하세요!
@@ -24,7 +27,9 @@
 
 ## 설치
 
-필요한 의존성을 설치합니다:
+아래 설치 단계는 플러그인을 수동으로 개발하거나 수정하려는 개발자만을 위한 것입니다. 일반 사용자의 경우, 단순히 [Dify 플러그인 패키지 다운로드](https://www.dropbox.com/scl/fi/ehbl0zmd409njmq2tmya3/upstage-documentparse.difypkg?rlkey=my8l73m70emtnc9fi1mo0tvg7&st=a10wvxty&dl=0)를 받아 Dify 인스턴스에 업로드하시면 됩니다.
+
+개발 목적:
 
 ```bash
 pip install -r requirements.txt

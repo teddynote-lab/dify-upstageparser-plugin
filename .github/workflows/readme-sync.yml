@@ -1,0 +1,50 @@
+name: README Sync Check
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'README_KO.md'
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'README.md'
+      - 'README_KO.md'
+
+jobs:
+  check-readme-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check README changes
+        id: check_changes
+        run: |
+          # Get the list of changed files
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          
+          # Check if only one README was modified
+          if echo "$CHANGED_FILES" | grep -q "README.md" && ! echo "$CHANGED_FILES" | grep -q "README_KO.md"; then
+            echo "::set-output name=reminder::true"
+            echo "::set-output name=message::⚠️ README.md was updated. Please consider updating README_KO.md as well."
+          elif echo "$CHANGED_FILES" | grep -q "README_KO.md" && ! echo "$CHANGED_FILES" | grep -q "README.md"; then
+            echo "::set-output name=reminder::true"
+            echo "::set-output name=message::⚠️ README_KO.md was updated. Please consider updating README.md as well."
+          else
+            echo "::set-output name=reminder::false"
+          fi
+
+      - name: Comment on PR
+        if: ${{ github.event_name == 'pull_request' && steps.check_changes.outputs.reminder == 'true' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `${{ steps.check_changes.outputs.message }}`
+            }) 
